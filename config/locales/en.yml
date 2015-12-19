@@ -23,6 +23,7 @@ en:
   hello: "Hello world"
   personal_info: Personal information
   contact_info: Contact information
+  select_person: Select person
   contact_kinds:
     address: Address
     email: E-mail

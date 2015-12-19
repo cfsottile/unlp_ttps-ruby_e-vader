@@ -2,29 +2,29 @@
 
 <h1>Listing Invoices</h1>
 
+<h2><%= "#{Client.model_name.human}: #{@client}" %></h2>
+
 <table>
   <thead>
     <tr>
-      <th>Client</th>
+      <th>Emission date</th>
       <th>Person</th>
       <th>Description</th>
       <th>Amount</th>
-      <th>Emission date</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @invoices.each do |invoice| %>
+    <% @client.invoices.each do |invoice| %>
       <tr>
-        <td><%= invoice.client %></td>
-        <td><%= invoice.person %></td>
+        <td><%= invoice.emission_date %></td>
+        <td><%= invoice.person.name %></td>
         <td><%= invoice.description %></td>
         <td><%= invoice.amount %></td>
-        <td><%= invoice.emission_date %></td>
-        <td><%= link_to 'Show', invoice %></td>
-        <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
-        <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', client_invoice_path(@client, invoice) %></td>
+        <td><%= link_to 'Edit', edit_client_invoice_path(@client, invoice) %></td>
+        <td><%= link_to 'Destroy', client_invoice_path(@client, invoice), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,7 @@
 
 <br>
 
-<%= link_to 'New Invoice', new_invoice_path %>
+<%= link_to 'New Invoice', new_client_invoice_path(@client) %><br><br>
+
+<%= link_to "Back to Client #{@client.last_name}, #{@client.first_name}", client_path(@client) %> |
+<%= link_to "Back to Client's Index", clients_path %>

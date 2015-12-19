@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= Client.model_name.human %></h2>
+<h1><%= Client.model_name.human %></h1>
 
 <h2><%= t :personal_info %></h2>
 <p>
@@ -60,4 +60,8 @@
 
 <%= link_to 'New Contact', new_client_contact_path(@client) %><br><br>
 
+<h2><%= Invoice.model_name.human.pluralize %></h2>
+<p><%= link_to "Show All", client_invoices_path(@client) %></p>
+
+<br>
 <%= link_to 'Back', clients_path %>
