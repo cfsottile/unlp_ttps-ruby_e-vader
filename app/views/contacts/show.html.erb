@@ -7,7 +7,7 @@
 
 <p>
   <strong>Type:</strong>
-  <%= @contact.type %>
+  <%= @contact.kind %>
 </p>
 
 <p>
@@ -15,5 +15,5 @@
   <%= @contact.value %>
 </p>
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<%= link_to 'Edit', edit_client_contact_path(@client, @contact) %> |
+<%= link_to 'Back', client_path(@client) %>

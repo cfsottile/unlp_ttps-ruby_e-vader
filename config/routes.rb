@@ -4,14 +4,16 @@ Rails.application.routes.draw do
   scope format: false do
     get 'page/home'
 
-    resources :invoices
     resources :people
-    resources :contacts
-    resources :clients
+    resources :clients do
+      resources :contacts
+      resources :invoices
+    end
   end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

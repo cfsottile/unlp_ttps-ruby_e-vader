@@ -18,7 +18,7 @@ class ContactsControllerTest < ActionController::TestCase
 
   test "should create contact" do
     assert_difference('Contact.count') do
-      post :create, contact: { client_id: @contact.client_id, type: @contact.type, value: @contact.value }
+      post :create, contact: { client_id: @contact.client_id, kind: @contact.kind, value: @contact.value }
     end
 
     assert_redirected_to contact_path(assigns(:contact))
@@ -35,7 +35,7 @@ class ContactsControllerTest < ActionController::TestCase
   end
 
   test "should update contact" do
-    patch :update, id: @contact, contact: { client_id: @contact.client_id, type: @contact.type, value: @contact.value }
+    patch :update, id: @contact, contact: { client_id: @contact.client_id, kind: @contact.kind, value: @contact.value }
     assert_redirected_to contact_path(assigns(:contact))
   end
 

@@ -25,11 +25,11 @@
   </div>
   <div class="field">
     <%= f.label :gender %><br>
-    <%= f.number_field :gender %>
+    <%= f.select :gender, Client.genders.keys, { include_blank: true } %>
   </div>
   <div class="field">
     <%= f.label :birthday %><br>
-    <%= f.date_select :birthday %>
+    <%= f.date_select :birthday, start_year: Time.now.year - 150, end_year: Time.now.year, default: Time.now %>
   </div>
   <div class="field">
     <%= f.label :cuilt %><br>
