@@ -22,5 +22,27 @@ class Client < ActiveRecord::Base
     "#{document_number} - #{last_name}, #{first_name}"
   end
 
+  def age
+    age = Date.current.year - birthday.year
+    if Date.current.month >= birthday.month || Date.current.day >= birthday.day
+      age += 1
+    end
+    age
+  end
 
+  def total_invoiced_amount
+    invoices.inject(0) { |sum, i| sum + i.amount }
+  end
+
+  def invoices_from(date)
+    invoices.where("emission_date >= ?", date).count
+  end
+
+  def more_invoiced_people(amount)
+    people
+      .select("name, cuilt, sum(amount) as sum_amount")
+      .group(:id)
+      .reorder("sum_amount DESC")
+      .limit(amount)
+  end
 end
