@@ -24,6 +24,11 @@ en:
   personal_info: Personal information
   contact_info: Contact information
   select_person: Select person
+  statistics: Statistics
+  client_age: Client's age
+  client_total_invoiced_amount: Client's total invoiced amount
+  client_invoices_from_january: Client's total invoices from January
+  client_five_more_invoiced_people: Client's five more invoiced people
   contact_kinds:
     address: Address
     email: E-mail

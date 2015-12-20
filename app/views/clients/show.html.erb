@@ -63,5 +63,17 @@
 <h2><%= Invoice.model_name.human.pluralize %></h2>
 <p><%= link_to "Show All", client_invoices_path(@client) %></p>
 
+<h2><%= t :statistics %></h2>
+
+<ul>
+  <li><%= "#{t :client_age}: #{@client.age}" %></li>
+  <li><%= "#{t :client_total_invoiced_amount}: #{@client.total_invoiced_amount}" %></li>
+  <li><%= "#{t :client_invoices_from_january}: #{@client.invoices_from(Date.new(Time.now.year, 1, 1))}" %></li>
+  <li><%= "#{t :client_five_more_invoiced_people}" %></li>
+    <% @client.more_invoiced_people(5).each do |p| %>
+      <ul><%= "#{p.name} - $#{p.sum_amount}" %></ul>
+    <% end %>
+</ul>
+
 <br>
 <%= link_to 'Back', clients_path %>
