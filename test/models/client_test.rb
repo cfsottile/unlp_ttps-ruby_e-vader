@@ -13,16 +13,15 @@ class ClientTest < ActiveSupport::TestCase
 
   test "new client with contact data" do
     client = clients(:four)
-    client.contacts.build(
-      kind: "email",
-      value: "jules_verne@impsat.com"
-    )
+    contact = contacts(:four)
+    client.contacts<<contact
+
     assert(client.save, "client should be saved")
 
-    contact = client.contacts.first
-    refute_nil(contact, "contact should be saved")
-    assert_equal("email", contact.kind, "contact was not correctly saved")
-    assert_equal("jules_verne@impsat.com", contact.value, "contact was not correctly saved")
+    saved_contact = client.contacts.first
+    refute_nil(saved_contact, "contact should be saved")
+    assert_equal(saved_contact.kind, contact.kind, "contact was not correctly saved")
+    assert_equal(saved_contact.value, contact.value, "contact was not correctly saved")
   end
 
   test "new client with an invalid document number" do
