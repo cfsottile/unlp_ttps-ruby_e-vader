@@ -13,3 +13,11 @@ five:
   gender: "female"
   birthday: 1962-10-29
   cuilt: "20-90100204-5"
+
+six:
+  first_name: "Peter Ware"
+  last_name: "Higgs"
+  document_number: "90100205"
+  gender: "male"
+  birthday: 1929-5-29
+  cuilt: "20-90100205-5"
