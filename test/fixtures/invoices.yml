@@ -1,15 +1,13 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  client_id: 
-  person_id: 
-  description: MyString
-  amount: 9.99
-  emission_date: 2015-12-18
+  client_id: 4
+  person_id: 3
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco labo..."
+  amount: 123
+  emission_date: 2015-12-17
 
 two:
-  client_id: 
-  person_id: 
-  description: MyString
-  amount: 9.99
-  emission_date: 2015-12-18
+  client_id: 4
+  person_id: 4
+  description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas..."
+  amount: 1000.54
+  emission_date: 2015-12-16

@@ -11,12 +11,16 @@ class Client < ActiveRecord::Base
     format: { with: /\A[A-zñÁÉÍÓÚáéíóúü][A-zñáéíóúÁÉÍÓÚü'\ ]+\z/ }
   validates :document_number,
     length: { in: 1..8 },
-    format: { with: /\A[0-9]+\z/ }
+    format: { with: /\A[0-9]+\z/ },
+    uniqueness: true
   validates :cuilt,
     length: { is: 13 },
-    format: { with: /\A[0-9]{2}-[0-9]{8}-[0-9]\z/ }
+    format: { with: /\A[0-9]{2}-[0-9]{8}-[0-9]\z/ },
+    uniqueness: true
   validates :birthday,
     date: { before: Proc.new { Time.now + 1.day } }
+  validates_associated :contacts
+  validates_associated :invoices
 
   def to_s
     "#{document_number} - #{last_name}, #{first_name}"

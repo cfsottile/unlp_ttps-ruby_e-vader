@@ -1,17 +1,15 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+four:
+  first_name: "Ada"
+  last_name: "Lovelace"
+  document_number: "90100203"
+  gender: "female"
+  birthday: 1815-12-10
+  cuilt: "20-90100203-5"
 
-one:
-  first_name: MyString
-  last_name: MyString
-  document_number: MyString
-  gender: 1
-  birthday: 2015-12-18
-  cuilt: MyString
-
-two:
-  first_name: MyString
-  last_name: MyString
-  document_number: MyString
-  gender: 1
-  birthday: 2015-12-18
-  cuilt: MyString
+five:
+  first_name: "Fabiola"
+  last_name: "Gianotti"
+  document_number: "document"
+  gender: "female"
+  birthday: 1962-10-29
+  cuilt: "20-90100204-5"
