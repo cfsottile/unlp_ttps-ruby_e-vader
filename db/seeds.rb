@@ -127,20 +127,20 @@ Person.create(
   cuilt: "10-90100200-1"
 )
 Person.create(
-  name: "UTN-FRC",
-  cuilt: "10-90100200-1"
+  name: "UTNFRC",
+  cuilt: "10-90100205-1"
 )
 Person.create(
   name: "University of London",
-  cuilt: "10-90100200-1"
+  cuilt: "10-90100202-1"
 )
 Person.create(
   name: "Kings' College",
-  cuilt: "10-90100200-1"
+  cuilt: "10-90100203-1"
 )
 Person.create(
   name: "University of Milan",
-  cuilt: "10-90100200-1"
+  cuilt: "10-90100204-1"
 )
 
 lorem_ipsum_texts = [
