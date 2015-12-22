@@ -12,23 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :client_id %><br>
+    <%= f.label :client_id, t("active_record.attributes.invoice.client") %><br>
     <%= f.select :client_id, [[@client, @client.id]] %>
   </div>
   <div class="field">
-    <%= f.label :person_id %><br>
+    <%= f.label :person_id, t("active_record.attributes.invoice.person") %><br>
     <%= f.select :person_id, Person.find_each(batch_size: Person.count).map { |p| [p, p.id] }, { include_blank: t(:select_person) } %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label :description, t("active_record.attributes.invoice.description") %><br>
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :amount %><br>
-    <%= f.text_field :amount %>
+    <%= f.label :amount, t("active_record.attributes.invoice.amount") %><br>
+    <%= f.text_field :amount, placeholder: t("amount_example") %>
   </div>
   <div class="field">
-    <%= f.label :emission_date %><br>
+    <%= f.label :emission_date, t("active_record.attributes.invoice.emission_date") %><br>
     <%= f.date_select :emission_date, start_year: Time.now.year - 150, end_year: Time.now.year, default: Time.now %>
   </div>
   <div class="actions">

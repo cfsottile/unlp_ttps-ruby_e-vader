@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :client_id %><br>
+    <%= f.label :client_id, t("active_record.attributes.contact.client") %><br>
     <%= f.select :client_id, [[@client, @client.id]] %>
   </div>
   <div class="field">
-    <%= f.label :kind %><br>
-    <%= f.select :kind, Contact.kinds.keys.map { |k| [I18n.t("contact_kinds.#{k}"), k]} %>
+    <%= f.label :kind, t("active_record.attributes.contact.kind") %><br>
+    <%= f.select :kind, Contact.kinds.keys.map { |k| [t("active_record.attributes.contact.kinds.#{k}"), k]} %>
   </div>
   <div class="field">
-    <%= f.label :value %><br>
+    <%= f.label :value, t("active_record.attributes.contact.value") %><br>
     <%= f.text_field :value %>
   </div>
   <div class="actions">

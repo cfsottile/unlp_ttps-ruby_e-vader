@@ -12,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :first_name %><br>
+    <%= f.label :first_name, t("active_record.attributes.client.first_name") %><br>
     <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br>
+    <%= f.label :last_name, t("active_record.attributes.client.last_name") %><br>
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :document_number %><br>
+    <%= f.label :document_number, t("active_record.attributes.client.document_number") %><br>
     <%= f.text_field :document_number %>
   </div>
   <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.select :gender, Client.genders.keys, { include_blank: true } %>
+    <%= f.label :gender, t("active_record.attributes.client.gender") %><br>
+    <%= f.select :gender, Client.genders.keys.map { |g| [t("active_record.attributes.client.genders.#{g}"), g]}, { include_blank: true } %>
   </div>
   <div class="field">
-    <%= f.label :birthday %><br>
+    <%= f.label :birthday, t("active_record.attributes.client.birthday") %><br>
     <%= f.date_select :birthday, start_year: Time.now.year - 150, end_year: Time.now.year, default: Time.now %>
   </div>
   <div class="field">
-    <%= f.label :cuilt %><br>
+    <%= f.label :cuilt, t("active_record.attributes.client.cuilt") %><br>
     <%= f.text_field :cuilt %>
   </div>
   <div class="actions">

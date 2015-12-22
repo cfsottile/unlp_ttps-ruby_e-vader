@@ -1,6 +1,6 @@
-<h1>Editing Invoice</h1>
+<h1><%= t("edit_invoice") %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', client_invoice_path(@client, @invoice) %> |
-<%= link_to 'Back', client_invoices_path(@client) %>
+<%= link_to t("show"), client_invoice_path(@client, @invoice) %> |
+<%= link_to t("back"), client_invoices_path(@client) %>

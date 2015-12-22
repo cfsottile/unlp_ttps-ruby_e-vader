@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t("active_record.attributes.person.name") %>:</strong>
   <%= @person.name %>
 </p>
 
 <p>
-  <strong>Cuilt:</strong>
+  <strong><%= t("active_record.attributes.client.cuilt") %>:</strong>
   <%= @person.cuilt %>
 </p>
 
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+<%= link_to t("edit"), edit_person_path(@person) %> |
+<%= link_to t("back"), people_path %>

@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Invoices</h1>
+<h1><%= t("listing_invoices") %></h1>
 
 <h2><%= "#{Client.model_name.human}: #{@client}" %></h2>
 
 <table>
   <thead>
     <tr>
-      <th>Emission date</th>
-      <th>Person</th>
-      <th>Description</th>
-      <th>Amount</th>
+      <th><%= t("active_record.attributes.invoice.emission_date") %></th>
+      <th><%= t("active_record.attributes.invoice.person") %></th>
+      <th><%= t("active_record.attributes.invoice.description") %></th>
+      <th><%= t("active_record.attributes.invoice.amount") %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,10 +21,10 @@
         <td><%= invoice.emission_date %></td>
         <td><%= invoice.person.name %></td>
         <td><%= invoice.description %></td>
-        <td><%= invoice.amount %></td>
-        <td><%= link_to 'Show', client_invoice_path(@client, invoice) %></td>
-        <td><%= link_to 'Edit', edit_client_invoice_path(@client, invoice) %></td>
-        <td><%= link_to 'Destroy', client_invoice_path(@client, invoice), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= number_to_currency(invoice.amount) %></td>
+        <td><%= link_to t("show"), client_invoice_path(@client, invoice) %></td>
+        <td><%= link_to t("edit"), edit_client_invoice_path(@client, invoice) %></td>
+        <td><%= link_to t("destroy"), client_invoice_path(@client, invoice), method: :delete, data: { confirm: t("are_you_sure") } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,7 +32,7 @@
 
 <br>
 
-<%= link_to 'New Invoice', new_client_invoice_path(@client) %><br><br>
+<%= link_to t("new_invoice"), new_client_invoice_path(@client) %><br><br>
 
-<%= link_to "Back to Client #{@client.last_name}, #{@client.first_name}", client_path(@client) %> |
-<%= link_to "Back to Client's Index", clients_path %>
+<%= link_to "#{t("back_to_client")} #{@client.last_name}, #{@client.first_name}", client_path(@client) %> |
+<%= link_to t("back_to_clients_index"), clients_path %>

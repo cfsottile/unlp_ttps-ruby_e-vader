@@ -35,7 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "date_validator"
 
 group :development, :test do
-  gem 'pry-byebug'
+  gem 'pry-byebug', platform: [:ruby_20]
 end
 
 group :development do

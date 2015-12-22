@@ -25,7 +25,7 @@ class InvoicesController < ApplicationController
     @invoice = Invoice.new(invoice_params)
 
     if @invoice.save
-      redirect_to client_invoice_url(@client, @invoice), notice: 'Invoice was successfully created.'
+      redirect_to client_invoice_url(@client, @invoice), notice: t("created_invoice")
     else
       render :new
     end
@@ -34,7 +34,7 @@ class InvoicesController < ApplicationController
   # PATCH/PUT /invoices/1
   def update
     if @invoice.update(invoice_params)
-      redirect_to client_invoice_url(@client, @invoice), notice: 'Invoice was successfully updated.'
+      redirect_to client_invoice_url(@client, @invoice), notice: t("erased_invoice")
     else
       render :edit
     end
@@ -43,7 +43,7 @@ class InvoicesController < ApplicationController
   # DELETE /invoices/1
   def destroy
     @invoice.destroy
-    redirect_to client_invoices_url(@client), notice: 'Invoice was successfully destroyed.'
+    redirect_to client_invoices_url(@client), notice: t("updated_invoice")
   end
 
   private

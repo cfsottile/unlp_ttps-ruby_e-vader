@@ -20,7 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   personal_info: Personal information
   contact_info: Contact information
   select_person: Select person
@@ -29,10 +28,50 @@ en:
   client_total_invoiced_amount: Client's total invoiced amount
   client_invoices_from_january: Client's total invoices from January
   client_five_more_invoiced_people: Client's five more invoiced people
-  contact_kinds:
-    address: Address
-    email: E-mail
-    phone_number: Phone Number
-    skype: Skype
+  are_you_sure: Are you sure?
+  created_client: Successfully created client
+  created_contact: Successfully created contact
+  created_invoice: Successfully created invoice
+  created_person: Successfully created person
+  erased_client: Successfully erased client
+  erased_contact: Successfully erased contact
+  erased_invoice: Successfully erased invoice
+  erased_person: Successfully erased person
+  updated_client: Successfully updated client
+  updated_contact: Successfully updated contact
+  updated_invoice: Successfully updated invoice
+  updated_person: Successfully updated person
+  back_to_clients_index: Back to client's index
+  back_to_client: Back to client
+  amount_example: "e.g. 1200.50"
   active_record:
-    client: Client
+    models:
+      client: Client
+      invoice: Invoice
+      contact: Contact
+      person: Person
+      clients: Clients
+      invoices: Invoices
+      contacts: Contacts
+      people: People
+    attributes:
+      client:
+        first_name: "First name"
+        last_name: "Last name"
+        document_number: "Document number"
+        gender: "Gender"
+        birthday: "Birthday"
+        cuilt: "CUIL/CUIT"
+        genders:
+          male: Male
+          female: Female
+      contact:
+        client: Client
+        kind: Kind
+        value: Value
+        kinds:
+          address: Address
+          email: E-mail
+          phone_number: Phone number
+          skype: Skype
+      invoice:

@@ -145,8 +145,8 @@ Person.create(
 
 lorem_ipsum_texts = [
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco labo...",
-  "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae...",
-  "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas...",
+  "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque...",
+  "At vero eos et accusamus et iusto odio dignissimos...",
   "Eum hinc argumentum te, no sit percipit adversarium, ne qui feugiat persecuti...",
   "The Lazy Description",
 ]

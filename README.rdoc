@@ -1,28 +1,47 @@
-== README
+# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## E-vader App
 
-Things you may want to cover:
+**E-vader App** is an accounting records management application. It is developed to fit **E-vader** needs.
 
-* Ruby version
+## Usage
 
-* System dependencies
+### Prerequisites
 
-* Configuration
+* Ruby 2.2.3
+* Bundler
+* JavaScript Runtime (e.g. Node.js)
+* SQLite3
+* Git
 
-* Database creation
+Installation speps for all of these can be found in [this guide](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-14-04)
 
-* Database initialization
+### Installation
 
-* How to run the test suite
+1. Clone this repository:
 
-* Services (job queues, cache servers, search engines, etc.)
+	```console
+	git clone https://github.com/cristian-s/unlp_ttps-ruby_e-vader.git
+	```
+2. `cd` into project:
 
-* Deployment instructions
+	```console
+	cd unlp_ttps-ruby_e-vader
+	```
+3. Install dependencies:
 
-* ...
+	```console
+	bundle install
+	```
+4. Setup database (this includes creating it, loading the schema and seeding it):
 
+	```console
+	bundle exec rake db:setup
+	```
+5. Run server:
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+	```console
+	bundle exec rails server
+	```
+
+Now the server is running and listening on `http://localhost:3000`.
