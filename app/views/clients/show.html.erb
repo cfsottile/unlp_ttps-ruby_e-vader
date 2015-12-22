@@ -71,7 +71,7 @@
   <li><%= "#{t :client_invoices_from_january}: #{@client.invoices_from(Date.new(Time.now.year, 1, 1))}" %></li>
   <li><%= "#{t :client_five_more_invoiced_people}" %></li>
     <% @client.more_invoiced_people(5).each do |p| %>
-      <ul><%= "#{p.name} - $#{p.sum_amount}" %></ul>
+      <ul><%= "#{p.name} - #{number_to_currency(p.sum_amount)}" %></ul>
     <% end %>
 </ul>
 
