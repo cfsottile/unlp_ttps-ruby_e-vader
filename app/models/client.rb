@@ -28,9 +28,9 @@ class Client < ActiveRecord::Base
 
   def age
     age = Date.current.year - birthday.year
-    if Date.current.month >= birthday.month || Date.current.day >= birthday.day
-      age += 1
-    end
+    age -= 1 unless
+      Date.current.month >= birthday.month &&
+      Date.current.day >= birthday.day
     age
   end
 
@@ -38,8 +38,12 @@ class Client < ActiveRecord::Base
     invoices.inject(0) { |sum, i| sum + i.amount }
   end
 
-  def invoices_from(date)
-    invoices.where("emission_date >= ?", date).count
+  def total_invoiced_amount_per_year
+    invoices.group("strftime('%Y', emission_date)").sum(:amount)
+  end
+
+  def invoices_amount_from_january
+    invoices.where("emission_date >= ?", Date.new(Time.now.year, 1, 1)).group("strftime('%m', emission_date)").count
   end
 
   def more_invoiced_people(amount)

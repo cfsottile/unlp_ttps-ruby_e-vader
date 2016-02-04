@@ -5,8 +5,8 @@ es:
   statistics: Estadísticas
   home: Inicio
   client_age: Edad
-  client_total_invoiced_amount: Total facturado
-  client_invoices_from_january: Cantidad de facturas desde Enero del corriente
+  client_total_invoiced_amount_per_year: Total facturado por año
+  client_invoices_amount_from_january: Cantidad de facturas por mes desde Enero del corriente
   client_five_more_invoiced_people: Cinco personas a las que más les facturó
   new_client: Crear cliente
   new_contact: Crear medio de contacto

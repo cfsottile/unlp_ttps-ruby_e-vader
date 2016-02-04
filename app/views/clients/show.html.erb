@@ -67,8 +67,14 @@
 
 <ul>
   <li><%= "#{t :client_age}: #{@client.age}" %></li>
-  <li><%= "#{t :client_total_invoiced_amount}: #{@client.total_invoiced_amount}" %></li>
-  <li><%= "#{t :client_invoices_from_january}: #{@client.invoices_from(Date.new(Time.now.year, 1, 1))}" %></li>
+  <li><%= "#{t :client_total_invoiced_amount_per_year}:" %></li>
+    <% @client.total_invoiced_amount_per_year.each do |k, v| %>
+      <ul><%= "#{k} - #{number_to_currency(v)}" %></ul>
+    <% end %>
+  <li><%= "#{t :client_invoices_amount_from_january}:" %></li>
+    <% @client.invoices_amount_from_january.each do |k, v| %>
+      <ul><%= "#{t("date.month_names")[k.to_i].capitalize} - #{v}" %></ul>
+    <% end %>
   <li><%= "#{t :client_five_more_invoiced_people}" %></li>
     <% @client.more_invoiced_people(5).each do |p| %>
       <ul><%= "#{p.name} - #{number_to_currency(p.sum_amount)}" %></ul>
