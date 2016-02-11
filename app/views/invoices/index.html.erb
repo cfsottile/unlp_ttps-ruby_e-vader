@@ -4,33 +4,35 @@
 
 <h2><%= "#{Client.model_name.human}: #{@client}" %></h2>
 
-<table>
-  <thead>
-    <tr>
-      <th><%= t("active_record.attributes.invoice.emission_date") %></th>
-      <th><%= t("active_record.attributes.invoice.person") %></th>
-      <th><%= t("active_record.attributes.invoice.description") %></th>
-      <th><%= t("active_record.attributes.invoice.amount") %></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @client.invoices.each do |invoice| %>
+<% if @client.has_invoices %>
+  <table>
+    <thead>
       <tr>
-        <td><%= invoice.emission_date %></td>
-        <td><%= invoice.person.name %></td>
-        <td><%= invoice.description %></td>
-        <td><%= number_to_currency(invoice.amount) %></td>
-        <td><%= link_to t("show"), client_invoice_path(@client, invoice) %></td>
-        <td><%= link_to t("edit"), edit_client_invoice_path(@client, invoice) %></td>
-        <td><%= link_to t("destroy"), client_invoice_path(@client, invoice), method: :delete, data: { confirm: t("are_you_sure") } %></td>
+        <th><%= t("active_record.attributes.invoice.emission_date") %></th>
+        <th><%= t("active_record.attributes.invoice.person") %></th>
+        <th><%= t("active_record.attributes.invoice.description") %></th>
+        <th><%= t("active_record.attributes.invoice.amount") %></th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @client.invoices.each do |invoice| %>
+        <tr>
+          <td><%= invoice.emission_date %></td>
+          <td><%= invoice.person.name %></td>
+          <td><%= invoice.description %></td>
+          <td><%= number_to_currency(invoice.amount) %></td>
+          <td><%= link_to t("show"), client_invoice_path(@client, invoice) %></td>
+          <td><%= link_to t("edit"), edit_client_invoice_path(@client, invoice) %></td>
+          <td><%= link_to t("destroy"), client_invoice_path(@client, invoice), method: :delete, data: { confirm: t("are_you_sure") } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p><%= t :client_has_no_invoices %></p>
+<% end %>
 
 <%= link_to t("new_invoice"), new_client_invoice_path(@client) %><br><br>
 

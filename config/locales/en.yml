@@ -28,6 +28,9 @@ en:
   client_total_invoiced_amount_per_year: Client's invoiced amount per year
   client_invoices_amount_from_january: Client's total invoices per month from January
   client_five_more_invoiced_people: Client's five more invoiced people
+  client_has_no_invoices: Client doesn't have invoices registered
+  client_has_no_invoices_from_january: Client doesn't have invoices registered from January
+  client_has_no_contacts: Client doesn't have contacts media registered
   are_you_sure: Are you sure?
   created_client: Successfully created client
   created_contact: Successfully created contact

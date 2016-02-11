@@ -34,12 +34,20 @@ class Client < ActiveRecord::Base
     age
   end
 
+  def has_invoices
+    invoices.size > 0
+  end
+
   def total_invoiced_amount
     invoices.inject(0) { |sum, i| sum + i.amount }
   end
 
   def total_invoiced_amount_per_year
     invoices.group("strftime('%Y', emission_date)").sum(:amount)
+  end
+
+  def has_invoices_from_january
+    invoices.where("emission_date >= ?", Date.new(Time.now.year, 1, 1)).count > 0
   end
 
   def invoices_amount_from_january
@@ -52,5 +60,9 @@ class Client < ActiveRecord::Base
       .group(:id)
       .reorder("sum_amount DESC")
       .limit(amount)
+  end
+
+  def has_contacts
+    contacts.size > 0
   end
 end

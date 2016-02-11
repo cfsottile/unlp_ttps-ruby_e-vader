@@ -8,6 +8,9 @@ es:
   client_total_invoiced_amount_per_year: Total facturado por año
   client_invoices_amount_from_january: Cantidad de facturas por mes desde Enero del corriente
   client_five_more_invoiced_people: Cinco personas a las que más les facturó
+  client_has_no_invoices: El cliente no presenta facturas
+  client_has_no_invoices_from_january: El cliente no presenta facturas desde Enero del corriente
+  client_has_no_contacts: El cliente no presenta medios de contacto
   new_client: Crear cliente
   new_contact: Crear medio de contacto
   new_invoice: Crear factura
